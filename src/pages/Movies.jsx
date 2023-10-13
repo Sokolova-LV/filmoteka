@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import { fetchSearchMovies } from "utils/api";
-import SearchMovie from "components/SearchMovie";
+import SearchMovie from "components/SearchMovie/SearchMovie";
 
 const Movies = () => {
     const [movies, setMovies] = useState([]); 

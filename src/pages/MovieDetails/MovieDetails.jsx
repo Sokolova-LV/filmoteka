@@ -3,8 +3,8 @@ import { useState, useEffect, useRef } from 'react';
 import { Outlet, useParams, useLocation } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { fetchInfoMovies } from 'utils/api';
-import MovieCard from 'components/MovieCard';
-import { Button, Title, InfoLink } from './MovieDetails.styled';
+import MovieCard from 'components/MovieCard/MovieCard';
+import { Button, Title } from './MovieDetails.styled';
 
 const MovieDetails = () => {
     const [selectedMovie, setSelectedMovie] = useState({});
@@ -35,14 +35,14 @@ const MovieDetails = () => {
             <Title>Movie info</Title>
             <ul>
                 <li>
-                    <InfoLink to="cast">
+                    <Link to="cast">
                         Cast
-                    </InfoLink>
+                    </Link>
                 </li>
                 <li>
-                    <InfoLink to="reviews">
+                    <Link to="reviews">
                         Reviews
-                    </InfoLink>
+                    </Link>
                 </li>
             </ul>
             <Suspense fallback={<div>Loading...</div>}>

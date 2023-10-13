@@ -23,3 +23,9 @@ export const Item = styled.li`
     border: 1px solid #1E90FF;
     border-radius: 5px;
 `;
+
+/*export const StyledLink = styled(Link)`
+  text-decoration: none;
+  font-size: 18px;
+  color: blue;
+`;*/
