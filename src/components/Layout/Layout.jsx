@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { NavLink, Outlet } from "react-router-dom";
-import { Header, List, Item, Title } from './Layout.styled';
+import { Outlet } from "react-router-dom";
+import { Header, List, Item, StyledNavLink, Title } from './Layout.styled';
 
 const Layout = () => {
     return (
@@ -8,14 +8,14 @@ const Layout = () => {
             <Header>
                 <List>
                     <Item>
-                        <NavLink to='/'>
+                        <StyledNavLink to='/'>
                             <Title>Home</Title>
-                        </NavLink>
+                        </StyledNavLink>
                     </Item>
                     <Item>
-                        <NavLink to='/movies'>
+                        <StyledNavLink to='/movies'>
                             <Title>Movies</Title>
-                        </NavLink>
+                        </StyledNavLink>
                     </Item>
                 </List>
             </Header>

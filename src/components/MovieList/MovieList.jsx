@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Container, Title, List, Item } from "./MovieList.styled";
+import { Container, Title, List, Item, StyledLink } from "./MovieList.styled";
 
 const MovieList = ({ trendMovies }) => {
     return (
@@ -8,9 +7,9 @@ const MovieList = ({ trendMovies }) => {
             <List>
                 {trendMovies.map(trendMovie => (
                     <Item key={trendMovie.id}>
-                        <Link to={`/movies/${trendMovie.id}`}>
+                        <StyledLink to={`/movies/${trendMovie.id}`}>
                             {trendMovie.title}
-                        </Link>
+                        </StyledLink>
                     </Item>
                 ))}
             </List>

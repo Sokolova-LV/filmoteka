@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { NavLink } from "react-router-dom";
 
 export const Header = styled.header`
     height: 100px;
@@ -15,6 +16,14 @@ export const List = styled.ul`
 
 export const Item = styled.li`
     
+`;
+
+export const StyledNavLink = styled(NavLink)`
+    text-decoration: none; 
+    
+    :active {
+        text-decoration: dashed;
+    };
 `;
 
 export const Title = styled.h2`

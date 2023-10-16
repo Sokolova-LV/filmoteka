@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     padding: 24px 64px;
@@ -24,8 +25,8 @@ export const Item = styled.li`
     border-radius: 5px;
 `;
 
-/*export const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)`
   text-decoration: none;
   font-size: 18px;
-  color: blue;
-`;*/
+  color: #8000080;
+`;

@@ -9,8 +9,8 @@ const Cast = () => {
     useEffect(() => {
         const getCast = async () => {
             try {
-                const { results } = await fetchCastMovies(movieId);
-                setCast(results);
+                const { cast } = await fetchCastMovies(movieId);
+                setCast(cast);
             } catch (error) {
                 console.log(error);
             }
