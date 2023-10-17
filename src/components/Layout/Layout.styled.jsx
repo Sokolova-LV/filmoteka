@@ -19,11 +19,11 @@ export const Item = styled.li`
 `;
 
 export const StyledNavLink = styled(NavLink)`
-    text-decoration: none; 
-    
-    :active {
-        text-decoration: dashed;
-    };
+    text-decoration: none;
+
+    &.active {
+        text-decoration: underline;
+    }
 `;
 
 export const Title = styled.h2`
