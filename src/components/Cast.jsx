@@ -21,7 +21,8 @@ const Cast = () => {
     return (
         <div>
             <h2>Cast</h2>
-            <ul>
+            {cast.length > 0 ? (
+                <ul>
                 {cast.map(({ name, profile_path, character }) => (
                     <li key={name}>
                         <img
@@ -34,6 +35,9 @@ const Cast = () => {
                     </li>
                 ))}
             </ul>
+            ) : (
+                <h2>There is no any information about cast</h2>
+            )}
         </div>
     );
 };

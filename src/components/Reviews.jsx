@@ -34,7 +34,7 @@ const Reviews = () => {
                 <h2>There is no any reviews</h2>
             )}
         </div>
-    );
+    ); 
 };
 
 export default Reviews;
