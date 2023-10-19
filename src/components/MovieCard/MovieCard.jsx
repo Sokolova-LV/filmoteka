@@ -18,12 +18,19 @@ const MovieCard = ({ movie }) => {
                 {userRate && <p>User rate: {userRate}%</p>}
                 <h3>Overview</h3>
                 <p>{overview}</p>
-                <h3>Genres</h3>
-                {genres && genres[0] && <p>{genres[0].name}</p>}
+                <h3>Genres</h3> 
+                {genres !== "" ? (
+                    genres && genres[0] &&
+                <p>{genres[0].name}</p>
+                ) : (
+                <p>There is no information about genres</p>
+                )}
+                <p>There is no information about genres</p>
             </div>
         </Container>
     );
 };
+
 
 MovieCard.propTypes = {
     movie: PropTypes.shape({
