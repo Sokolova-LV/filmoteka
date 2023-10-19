@@ -25,7 +25,6 @@ const MovieCard = ({ movie }) => {
                 ) : (
                 <p>There is no information about genres</p>
                 )}
-                <p>There is no information about genres</p>
             </div>
         </Container>
     );
