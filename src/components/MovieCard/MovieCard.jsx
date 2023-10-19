@@ -19,9 +19,10 @@ const MovieCard = ({ movie }) => {
                 <h3>Overview</h3>
                 <p>{overview}</p>
                 <h3>Genres</h3> 
-                {genres !== "" ? (
-                    genres && genres[0] &&
-                <p>{genres[0].name}</p>
+                {genres && genres.length > 0 ? (
+                    <p>
+                        {genres[0] && genres[0].name}
+                    </p>
                 ) : (
                 <p>There is no information about genres</p>
                 )}
