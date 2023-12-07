@@ -1,12 +1,14 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import { Header, List, Item, StyledNavLink, Title } from './Layout.styled';
+import { Header, Wrap, List, Item, StyledNavLink, MainTitle, Title } from './Layout.styled';
 
 const Layout = () => {
     return (
         <div>
             <Header>
-                <List>
+                <Wrap>
+                <MainTitle>Filmoteka</MainTitle>
+                    <List>
                     <Item>
                         <StyledNavLink to='/'>
                             <Title>Home</Title>
@@ -14,10 +16,16 @@ const Layout = () => {
                     </Item>
                     <Item>
                         <StyledNavLink to='/movies'>
-                            <Title>Movies</Title>
+                            <Title>Search</Title>
                         </StyledNavLink>
                     </Item>
-                </List>
+                    <Item>
+                        <StyledNavLink to='/library'>
+                            <Title>My library</Title>
+                        </StyledNavLink>
+                    </Item>
+                    </List>
+                </Wrap>
             </Header>
             <main>
                 <Suspense fallback={<div>Loading...</div>}>

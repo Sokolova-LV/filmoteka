@@ -7,7 +7,7 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 
 export const fetchPopularMovies = async () => {
     const { data } = await axios.get(
-        `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`
+        `${BASE_URL}/trending/movie/week?api_key=${API_KEY}`
     );
     return data;
 };
@@ -30,20 +30,11 @@ export const fetchInfoMovies = async movieId => {
     return data;
 };
 
-// fetch movies`s cast
+// fetch movies`s video
 
-export const fetchCastMovies = async movieId => {
-    const { data } = await axios.get(
-        `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`
+export const fetchVideoMovie = async movieId => {
+    const { results } = await axios.get(
+        `${BASE_URL}/movie/${movieId}/videos?api_key=${API_KEY}`
     );
-    return data;
-};
-
-// fetch movies`s reviews
-
-export const fetchReviewsMovies = async movieId => {
-    const { data } = await axios.get(
-        `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}`
-    );
-    return data;
+    return results;
 };

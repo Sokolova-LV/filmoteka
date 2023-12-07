@@ -1,10 +1,9 @@
-import { Suspense } from 'react';
-import { useState, useEffect, useRef } from 'react';
+import { Suspense } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Outlet, useParams, useLocation } from "react-router-dom";
-import { Link } from 'react-router-dom';
-import { fetchInfoMovies } from 'utils/api';
-import MovieCard from 'components/MovieCard/MovieCard';
-import { Button, Title } from './MovieDetails.styled';
+import { fetchInfoMovies } from "utils/api";
+import MovieCard from "components/MovieCard/MovieCard";
+import { StyledLink, Button, Title } from "./MovieDetails.styled";
 
 const MovieDetails = () => {
     const [selectedMovie, setSelectedMovie] = useState({});
@@ -28,23 +27,11 @@ const MovieDetails = () => {
 
     return (
         <div>
-            <Link to={backLink.current}>
-                <Button type='button'>Go back</Button>
-            </Link>
-            <MovieCard movie={selectedMovie} />
+            <StyledLink to={backLink.current}>
+                <Button type="button">Go back</Button>
+            </StyledLink>
             <Title>Movie info</Title>
-            <ul>
-                <li>
-                    <Link to="cast">
-                        Cast
-                    </Link>
-                </li>
-                <li>
-                    <Link to="reviews">
-                        Reviews
-                    </Link>
-                </li>
-            </ul>
+            <MovieCard movie={selectedMovie} />
             <Suspense fallback={<div>Loading...</div>}>
                 <Outlet />
             </Suspense>

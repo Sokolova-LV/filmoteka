@@ -1,14 +1,16 @@
-import { Container, Title, List, Item, StyledLink } from "./MovieList.styled";
+import { Container, List, Item, StyledLink, Image, Title } from "./MovieList.styled";
 
 const MovieList = ({ trendMovies }) => {
+    const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
+
     return (
         <Container>
-            <Title>Popular movies</Title>
             <List>
                 {trendMovies.map(trendMovie => (
                     <Item key={trendMovie.id}>
                         <StyledLink to={`/movies/${trendMovie.id}`}>
-                            {trendMovie.title}
+                            <Image src={IMG_PATH+trendMovie.poster_path} alt={trendMovie.title} />
+                            <Title>{trendMovie.title}</Title>
                         </StyledLink>
                     </Item>
                 ))}

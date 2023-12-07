@@ -11,7 +11,7 @@ const Home = () => {
                 const { results } = await fetchPopularMovies();
                 setTrendMovies(results);
             } catch (error) {
-                error(error.message);
+                console.error(error.message);
             }
         };
         fetchTrendMovies();
@@ -19,7 +19,7 @@ const Home = () => {
 
     return (
         <div>
-            <MovieList trendMovies={trendMovies} />
+            <MovieList trendMovies={trendMovies}/>
         </div>
     );
 };

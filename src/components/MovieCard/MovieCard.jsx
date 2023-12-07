@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Container } from './MovieCard.styled';
+import { Container, Image, Title, Text, Article } from './MovieCard.styled';
 
 const MovieCard = ({ movie }) => {
     const { title, genres, release_date, overview, vote_average, poster_path } = movie;
@@ -8,26 +8,26 @@ const MovieCard = ({ movie }) => {
     const imgURL = `https://image.tmdb.org/t/p/w300${poster_path}`;
 
     return (
-        <Container>
-            {imgURL && <img src={imgURL} alt={title} />}
-            <div>
-                <h1>
-                    {title}
+        <div>
+            {imgURL && <Image src={imgURL} alt={title} />}
+            <Container>
+                <Title>
+                    {title}  
                 ({releaseDate})
-                </h1>
-                {userRate && <p>User rate: {userRate}%</p>}
-                <h3>Overview</h3>
-                <p>{overview}</p>
-                <h3>Genres</h3> 
+                </Title>
+                {userRate && <Text>User rate: {userRate}%</Text>}
+                <Article>Overview</Article>
+                <Text>{overview}</Text>
+                <Article>Genres</Article> 
                 {genres && genres.length > 0 ? (
-                    <p>
+                    <Text>
                         {genres[0] && genres[0].name}
-                    </p>
+                    </Text>
                 ) : (
                 <p>There is no information about genres</p>
                 )}
-            </div>
-        </Container>
+            </Container>
+        </div>
     );
 };
 
